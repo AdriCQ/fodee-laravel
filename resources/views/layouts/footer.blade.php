@@ -2,17 +2,27 @@
     <div class="container">
         <div class="row row-padded">
             <div class="col-md-12 text-center">
-                <p class="to-animate">&copy; 2016 Foodee Free HTML5 Template. <br> Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://pexels.com/" target="_blank">Pexels</a> <br> Tasty Icons Free <a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank">handdrawngoods</a>
+                <p class="to-animate">&copy; {{ now()->year }} GoDjango. All Rights Reserved
                 </p>
-                <p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
+                <p class="text-center to-animate"><a href="#" class="js-gotop">Ir al Inicio</a></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
                 <ul class="fh5co-social">
-                    <li class="to-animate-2"><a href="#"><i class="icon-facebook"></i></a></li>
-                    <li class="to-animate-2"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="to-animate-2"><a href="#"><i class="icon-instagram"></i></a></li>
+                    @if(isset($config['social_fb']))
+                        <li class="to-animate-2"><a href="{{ $config['social_fb'] }}"><i class="icon-facebook"></i></a></li>
+                    @endif
+                    @if(isset($config['social_in']))
+                        <li class="to-animate-2"><a href="{{ $config['social_in'] }}"><i class="icon-instagram"></i></a></li>
+                    @endif
+                    @if(isset($config['social_yt']))
+                        <li class="to-animate-2"><a href="{{ $config['social_yt'] }}"><i class="icon-youtube"></i></a></li>
+                    @endif
+                    @if(isset($config['social_tw']))
+                        <li class="to-animate-2"><a href="{{ $config['social_tw'] }}"><i class="icon-twitter"></i></a></li>
+                    @endif
+
                 </ul>
             </div>
         </div>
