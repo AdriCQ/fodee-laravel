@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Config;
 use Illuminate\Http\Request;
 
@@ -20,8 +21,9 @@ class ViewController extends Controller
      * index
      * @return Illuminate\Contracts\View\View
      */
-    public function index(Request $request)
+    public function index()
     {
+        $this->DATA['comments'] = Comment::query()->where('visible', true)->orderBy('updated_at', 'desc')->get();
         return view('welcome')->with($this->DATA);
     }
 }

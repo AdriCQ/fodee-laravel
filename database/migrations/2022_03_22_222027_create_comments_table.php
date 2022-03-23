@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->string('email');
             $table->string('name');
-            $table->text('comment');
+            $table->text('message');
             $table->boolean('visible')->default(false);
             $table->timestamps();
         });
