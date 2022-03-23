@@ -21,3 +21,14 @@
     @include('sections.reservation')
 
 @endsection
+
+@section('extra_script')
+
+<script>
+    function openEventDetails(title, date, description){
+        console.log({title, date, description});
+        $('#event_details_modal').modal();
+    }
+</script>
+
+@endsection

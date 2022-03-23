@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Comment;
 use App\Models\Dish;
+use App\Models\Event;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
@@ -19,6 +20,7 @@ class FakeSeeder extends Seeder
         $this->call([DatabaseSeeder::class]);
         $this->seedComments();
         $this->seedDishes(10, 2);
+        $this->seedEvents(8, 1);
     }
     /**
      * seedComments
@@ -63,6 +65,26 @@ class FakeSeeder extends Seeder
                 ]);
             }
             Dish::query()->insert($data);
+        }
+    }
+
+    /**
+     * seedComments
+     */
+    private function seedEvents(int $limit = 10, int $repeat = 1)
+    {
+        $faker = Factory::create();
+        for ($i = 0; $i < $limit; $i++) {
+            $data = [];
+            for ($r = 0; $r < $repeat; $r++) {
+                array_push($data, [
+                    'title' => $faker->words(3, true),
+                    'date' => $faker->date(),
+                    'description' => $faker->text(500),
+                    'enable' => $faker->boolean
+                ]);
+            }
+            Event::query()->insert($data);
         }
     }
 }
