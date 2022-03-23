@@ -819,7 +819,7 @@ p {
   padding-left: 80px;
 }
 #fh5co-menus .fh5co-food-menu h2.fh5co-dishes:before {
-  background: url(../images/0302-steak.png) no-repeat;
+  background: url(../images/0401-vegan.png) no-repeat;
   content: "";
   position: absolute;
   top: 0;
@@ -1261,7 +1261,7 @@ p {
   display: none;
   border-bottom: none !important;
   background: rgba(0, 0, 0, 0.7);
-  padding: 15px 10px 15px 10px;
+  padding: 0 10px 10px 10px;
   cursor: pointer;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;

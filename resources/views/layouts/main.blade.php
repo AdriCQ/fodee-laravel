@@ -70,22 +70,11 @@
 
 	<div id="fh5co-container">
 
-	    @include('sections.home')
+        @yield('intro')
 
 		@include('sections.sticky')
 
-		@include('sections.about')
-
-		@include('sections.comments')
-
-		@include('sections.features')
-
-        @include('sections.menu')
-
-        @include('sections.events')
-
-        @include('sections.reservation')
-
+        @yield('content')
 
 	</div>
 

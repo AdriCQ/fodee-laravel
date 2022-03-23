@@ -45,13 +45,23 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Factory::create();
         Config::query()->insert([
+            // home
             'title' => 'AppTitle',
-            'description' => 'App Description',
+            'home_subtitle' => 'App Description',
+            // about
             'about_us' => $faker->text,
-            'about_us_picture' => $faker->url,
+            'about_us_image' => 'assets/images/res_img_2.jpg',
+            // Menu
+            'menu_subtitle' => $faker->text,
+            // Evetns
+            'events_subtitle' => $faker->text,
+            // Reserv
+            'reserv_subtitle' => $faker->text,
+            // contact
             'address' => $faker->address,
             'phone' => $faker->phoneNumber,
             'email' => $faker->email,
+            // Footer
             'social_fb' => $faker->url,
             'social_in' => $faker->url,
             'social_yt' => $faker->url,

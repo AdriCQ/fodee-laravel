@@ -3,12 +3,12 @@
         <div class="row text-center fh5co-heading row-padded">
             <div class="col-md-8 col-md-offset-2">
                 <h2 class="heading to-animate">Reserva una Mesa</h2>
-                <p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="sub-heading to-animate">{{$config['reserv_subtitle']}}</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 to-animate-2">
-                <h3>Contact Info</h3>
+                <h3>Contacto</h3>
                 <ul class="fh5co-contact-info">
                     <li class="fh5co-contact-address ">
                         <i class="icon-home"></i>
@@ -19,7 +19,7 @@
                 </ul>
             </div>
             <div class="col-md-6 to-animate-2">
-                <h3>Reservation Form</h3>
+                <h3>Formulario de Reserva</h3>
                 <div class="form-group ">
                     <label for="name" class="sr-only">Nombre</label>
                     <input id="name" class="form-control" placeholder="Nombre" type="text">

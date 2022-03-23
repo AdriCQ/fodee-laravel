@@ -4,7 +4,7 @@
         <div class="row text-center fh5co-heading row-padded">
             <div class="col-md-8 col-md-offset-2 to-animate">
                 <h2 class="heading">Upcoming Events</h2>
-                <p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="sub-heading">{{ $config['events_subtitle']}}</p>
             </div>
         </div>
         <div class="row">

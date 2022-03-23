@@ -19,8 +19,7 @@ class CreateDishesTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->unsignedDecimal('sell_price', 8, 2);
-            $table->unsignedBigInteger('sales')->default(0);
-            $table->boolean('star')->default(false);
+            $table->boolean('feature')->default(false);
             $table->string('image');
             $table->timestamps();
         });

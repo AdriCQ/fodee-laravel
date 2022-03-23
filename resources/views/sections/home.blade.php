@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row">
                     <h1 class="to-animate">{{ $config['title'] }}</h1>
-                    <h2 class="to-animate">{{ $config['description'] }}</a></h2>
+                    <h2 class="to-animate">{{ $config['home_subtitle'] }}</a></h2>
                 </div>
             </div>
         </div>

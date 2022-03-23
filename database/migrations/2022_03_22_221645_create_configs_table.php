@@ -15,10 +15,19 @@ class CreateConfigsTable extends Migration
     {
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
+            // Home
             $table->string('title');
-            $table->string('description');
+            $table->string('home_subtitle')->default('');
+            // About us
             $table->text('about_us');
-            $table->string('about_us_picture');
+            $table->string('about_us_image');
+            // Menu
+            $table->string('menu_subtitle')->default('');
+            // Events
+            $table->string('events_subtitle')->default('');
+            // Reserv
+            $table->string('reserv_subtitle')->default('');
+            // Contact
             $table->string('address');
             $table->string('phone');
             $table->string('email');
