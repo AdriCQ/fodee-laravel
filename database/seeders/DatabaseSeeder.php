@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Config;
+use App\Models\Image;
 use App\Models\User;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call([VoyagerDatabaseSeeder::class]);
         $this->seedUsers();
         $this->seedConfig();
+        $this->seedImages();
     }
 
     private function seedUsers()
@@ -50,7 +52,7 @@ class DatabaseSeeder extends Seeder
             'home_subtitle' => 'App Description',
             // about
             'about_us' => $faker->text,
-            'about_us_image' => 'assets/images/res_img_2.jpg',
+            // 'about_us_image' => 'assets/images/res_img_2.jpg',
             // Menu
             'menu_subtitle' => $faker->text,
             // Evetns
@@ -66,6 +68,37 @@ class DatabaseSeeder extends Seeder
             'social_in' => $faker->url,
             'social_yt' => $faker->url,
             'social_tw' => $faker->url,
+        ]);
+    }
+    /**
+     * seedImages
+     */
+    private function seedImages()
+    {
+        Image::query()->insert([
+            // Home Slider
+            [
+                'tag' => 'slider1',
+                'path' => 'assets/images/slide_1.jpg'
+            ],
+            [
+                'tag' => 'slider2',
+                'path' => 'assets/images/slide_2.jpg'
+            ],
+            [
+                'tag' => 'slider3',
+                'path' => 'assets/images/slide_3.jpg'
+            ],
+            // About us
+            [
+                'tag' => 'about',
+                'path' => 'assets/images/res_img_1.jpg'
+            ],
+            // Events
+            [
+                'tag' => 'events',
+                'path' => 'assets/images/slide_2.jpg'
+            ],
         ]);
     }
 }

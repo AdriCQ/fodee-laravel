@@ -1,5 +1,5 @@
 <div id="fh5co-about" data-section="about">
-    <div class="fh5co-2col fh5co-bg to-animate-2" style="background-image: url({{ asset($config['about_us_image']) }})"></div>
+    <div class="fh5co-2col fh5co-bg to-animate-2" style="background-image: url({{ asset($images['about']) }})"></div>
     <div class="fh5co-2col fh5co-text">
         <h2 class="heading to-animate">Sobre Nosotros</h2>
         <p class="to-animate"><span class="firstcharacter">{{ $config['about_us'][0] }}</span>{{ substr($config['about_us'],1, strlen($config['about_us'])) }}</p>

@@ -1,5 +1,5 @@
 @if(count($events))
-<div id="fh5co-events" data-section="events" style="background-image: url({{ asset('assets/images/slide_2.jpg') }});" data-stellar-background-ratio="0.5">
+<div id="fh5co-events" data-section="events" style="background-image: url({{ asset($images['events']) }});" data-stellar-background-ratio="0.5">
     <div class="fh5co-overlay"></div>
     <div class="container">
         <div class="row text-center fh5co-heading row-padded">

@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\Config;
 use App\Models\Dish;
 use App\Models\Event;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -36,6 +37,11 @@ class ViewController extends Controller
         }
         $this->DATA['categories'] = $categories;
         $this->DATA['features'] = Dish::query()->orderBy('feature', 'desc')->take(6)->get();
+        $images = [];
+        foreach (Image::all() as $img) {
+            $images[$img->tag] = $img->path;
+        }
+        $this->DATA['images'] = $images;
         $this->DATA['events'] = Event::query()->where('enable', true)->get();
         return view('welcome')->with($this->DATA);
     }

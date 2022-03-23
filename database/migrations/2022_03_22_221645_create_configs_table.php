@@ -20,7 +20,7 @@ class CreateConfigsTable extends Migration
             $table->string('home_subtitle')->default('');
             // About us
             $table->text('about_us');
-            $table->string('about_us_image');
+            // $table->string('about_us_image');
             // Menu
             $table->string('menu_subtitle')->default('');
             // Events
