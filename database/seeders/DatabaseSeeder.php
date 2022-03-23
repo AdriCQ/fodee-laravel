@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Config;
 use App\Models\User;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,6 +17,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([VoyagerDatabaseSeeder::class]);
+        $this->seedUsers();
+        $this->seedConfig();
+    }
+
+    private function seedUsers()
+    {
         $su = new User([
             'email' => 'developer@admin.com',
             'password' => bcrypt('AdminPassword'),
@@ -31,5 +39,23 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
         $user->save();
+    }
+
+    private function seedConfig()
+    {
+        $faker = Factory::create();
+        Config::query()->insert([
+            'title' => 'AppTitle',
+            'description' => 'App Description',
+            'about_us' => $faker->text,
+            'about_us_picture' => $faker->url,
+            'address' => $faker->address,
+            'phone' => $faker->phoneNumber,
+            'email' => $faker->email,
+            'social_fb' => $faker->url,
+            'social_in' => $faker->url,
+            'social_yt' => $faker->url,
+            'social_tw' => $faker->url,
+        ]);
     }
 }
