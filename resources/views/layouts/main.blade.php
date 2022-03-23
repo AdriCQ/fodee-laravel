@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{{ $config['name'] }}</title>
+	<title>{{ $config['title'] }}</title>
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
@@ -77,6 +77,8 @@
 		@include('sections.about')
 
 		@include('sections.comments')
+
+		@include('sections.features')
 
         @include('sections.menu')
 

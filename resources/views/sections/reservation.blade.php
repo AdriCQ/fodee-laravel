@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row text-center fh5co-heading row-padded">
             <div class="col-md-8 col-md-offset-2">
-                <h2 class="heading to-animate">Reserve a Table</h2>
+                <h2 class="heading to-animate">Reserva una Mesa</h2>
                 <p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             </div>
         </div>
@@ -12,18 +12,17 @@
                 <ul class="fh5co-contact-info">
                     <li class="fh5co-contact-address ">
                         <i class="icon-home"></i>
-                        5555 Love Paradise 56 New Clity 5655, <br>Excel Tower United Kingdom
+                        {{ $config['address']}}
                     </li>
-                    <li><i class="icon-phone"></i> (123) 465-6789</li>
-                    <li><i class="icon-envelope"></i>info@freehtml5.co</li>
-                    <li><i class="icon-globe"></i> <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></li>
+                    <li><i class="icon-phone"></i> {{ $config['phone']}}</li>
+                    <li><i class="icon-envelope"></i>{{ $config['email']}}</li>
                 </ul>
             </div>
             <div class="col-md-6 to-animate-2">
                 <h3>Reservation Form</h3>
                 <div class="form-group ">
-                    <label for="name" class="sr-only">Name</label>
-                    <input id="name" class="form-control" placeholder="Name" type="text">
+                    <label for="name" class="sr-only">Nombre</label>
+                    <input id="name" class="form-control" placeholder="Nombre" type="text">
                 </div>
                 <div class="form-group ">
                     <label for="email" class="sr-only">Email</label>
@@ -39,18 +38,18 @@
                     </select>
                 </div>
                 <div class="form-group ">
-                    <label for="date" class="sr-only">Date</label>
-                    <input id="date" class="form-control" placeholder="Date &amp; Time" type="text">
+                    <label for="date" class="sr-only">Fecha</label>
+                    <input id="date" class="form-control" placeholder="Fecha &amp; Hora" type="text">
                 </div>
 
 
 
                 <div class="form-group ">
-                    <label for="message" class="sr-only">Message</label>
+                    <label for="message" class="sr-only">Mensaje</label>
                     <textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
                 </div>
                 <div class="form-group ">
-                    <input class="btn btn-primary" value="Send Message" type="submit">
+                    <input class="btn btn-primary" value="Enviar Mensaje" type="submit">
                 </div>
                 </div>
         </div>
