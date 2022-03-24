@@ -17,16 +17,16 @@ class CreateConfigsTable extends Migration
             $table->id();
             // Home
             $table->string('title');
-            $table->string('home_subtitle')->default('');
+            $table->string('home_subtitle')->nullable();
             // About us
             $table->text('about_us');
             // $table->string('about_us_image');
             // Menu
-            $table->string('menu_subtitle')->default('');
+            $table->string('menu_subtitle')->nullable();
             // Events
-            $table->string('events_subtitle')->default('');
+            $table->string('events_subtitle')->nullable();
             // Reserv
-            $table->string('reserv_subtitle')->default('');
+            $table->string('reserv_subtitle')->nullable();
             // Contact
             $table->string('address');
             $table->string('phone');

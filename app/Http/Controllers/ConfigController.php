@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Config;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class ConfigController extends Controller
@@ -51,7 +52,6 @@ class ConfigController extends Controller
             return response()->json($validator->errors()->toArray(), 400);
         }
         $validator = $validator->validate();
-        $config = Config::first();
-        return $config->update($validator) ? response()->json($config) : response()->json(['No se pudo actualizar la configuracion'], 502);
+        return Config::query()->where('id', 1)->update($validator) ? response()->json(Config::first()) : response()->json(['No se pudo actualizar la configuracion'], 502);
     }
 }
