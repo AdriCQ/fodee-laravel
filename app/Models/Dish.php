@@ -10,4 +10,6 @@ class Dish extends Model
     use HasFactory;
     protected $table = 'dishes';
     protected $guarded = ['id'];
+
+    protected $casts = ['feature' => 'boolean'];
 }

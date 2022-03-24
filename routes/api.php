@@ -43,5 +43,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch('events/{id}', [EventController::class, 'update']);
     Route::delete('events/{id}', [EventController::class, 'remove']);
     // Image
-    Route::post('images', [ImageController::class, 'upload']);
+    Route::get('images', [ImageController::class, 'list']);
+    Route::post('images/{id}', [ImageController::class, 'upload']);
+
+    Route::post('users/update-password', [UserController::class, 'updatePassword']);
 });

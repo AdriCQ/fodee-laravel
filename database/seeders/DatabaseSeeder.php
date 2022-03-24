@@ -78,24 +78,29 @@ class DatabaseSeeder extends Seeder
         Image::query()->insert([
             // Home Slider
             [
+                'title' => 'Fondo Inicio 1',
                 'tag' => 'slider1',
                 'path' => 'assets/images/slide_1.jpg'
             ],
             [
+                'title' => 'Fondo Inicio 2',
                 'tag' => 'slider2',
                 'path' => 'assets/images/slide_2.jpg'
             ],
             [
+                'title' => 'Fondo Inicio 3',
                 'tag' => 'slider3',
                 'path' => 'assets/images/slide_3.jpg'
             ],
             // About us
             [
+                'title' => 'Sobre Nosotros',
                 'tag' => 'about',
                 'path' => 'assets/images/res_img_1.jpg'
             ],
             // Events
             [
+                'title' => 'Eventos',
                 'tag' => 'events',
                 'path' => 'assets/images/slide_2.jpg'
             ],
