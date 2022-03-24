@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login', [UserController::class, 'login']);
+Route::post('users/login', [UserController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('comments', [CommentController::class, 'list']);

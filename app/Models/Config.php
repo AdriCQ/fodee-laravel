@@ -11,4 +11,5 @@ class Config extends Model
     protected $table = 'configs';
     protected $guarded = ['id'];
     public $timestamps = false;
+    protected $casts = ['open' => 'boolean'];
 }

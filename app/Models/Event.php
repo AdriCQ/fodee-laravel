@@ -11,4 +11,6 @@ class Event extends Model
     protected $table = 'events';
     protected $guarded = ['id'];
     public $timestamps = false;
+
+    protected $casts = ['enable' => 'boolean'];
 }

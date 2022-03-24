@@ -10,4 +10,5 @@ class Reserve extends Model
     use HasFactory;
     protected $table = 'reserves';
     protected $guarded = ['id'];
+    protected $casts = ['accepted' => 'boolean'];
 }
