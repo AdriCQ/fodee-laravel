@@ -50,7 +50,7 @@ class DishController extends Controller
      */
     public function list(Request $request)
     {
-        return Dish::all();
+        return Dish::query()->orderBy('id', 'desc')->get();
     }
 
     /**

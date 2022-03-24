@@ -45,9 +45,9 @@ class EventController extends Controller
      * @param Request request
      * @return Illuminate\Http\JsonResponse
      */
-    public function list(Request $request)
+    public function list()
     {
-        return Event::all();
+        return Event::query()->orderBy('id', 'desc')->get();
     }
 
     /**

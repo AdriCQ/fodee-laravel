@@ -44,7 +44,7 @@ class CommentController extends Controller
      */
     public function list()
     {
-        return response()->json(Comment::all(), 200, [], JSON_NUMERIC_CHECK);
+        return response()->json(Comment::query()->orderBy('id', 'desc')->get(), 200, [], JSON_NUMERIC_CHECK);
     }
 
     /**
