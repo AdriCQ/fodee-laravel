@@ -5,6 +5,7 @@ use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +46,9 @@ Route::middleware('auth:sanctum')->group(function () {
     // Image
     Route::get('images', [ImageController::class, 'list']);
     Route::post('images/{id}', [ImageController::class, 'upload']);
-
+    // Reserve
+    Route::get('reserves', [ReserveController::class, 'list']);
+    Route::delete('reserves/{id}', [ReserveController::class, 'remove']);
+    // User
     Route::post('users/update-password', [UserController::class, 'updatePassword']);
 });
