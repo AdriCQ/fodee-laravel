@@ -28,8 +28,9 @@ class DishController extends Controller
             return response()->json($validator->errors()->toArray(), 400);
         }
         $validator = $validator->validate();
-        $validator['image'] = $request->file('image')->store('dishes');
+        $validator['image'] = 'storage/' . $request->file('image')->store('dishes', 'public');
         $dish = new Dish($validator);
+
         return $dish->save()
             ? response()->json($dish, 200, [], JSON_NUMERIC_CHECK)
             : response()->json(['Error'], 502, [], JSON_NUMERIC_CHECK);
@@ -45,10 +46,9 @@ class DishController extends Controller
     }
     /**
      * List
-     * @param Request request
      * @return Illuminate\Http\JsonResponse
      */
-    public function list(Request $request)
+    public function list()
     {
         return Dish::query()->orderBy('id', 'desc')->get();
     }
@@ -79,6 +79,7 @@ class DishController extends Controller
             'description' => ['nullable', 'string'],
             'sell_price' => ['nullable', 'numeric'],
             'feature' => ['nullable', 'boolean'],
+            'image' => ['nullable', 'image'],
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors()->toArray(), 400);
@@ -86,6 +87,20 @@ class DishController extends Controller
         $validator = $validator->validate();
         $dish = Dish::find($id);
         if (!$dish) return response()->json(['No encontrado'], 400);
+        // Handel image
+        if ($request->hasFile('image')) {
+            $oldpath = $dish->image;
+            if (!Storage::disk('public')->exists('dishes'))
+                Storage::disk('public')->makeDirectory('dishes');
+            $path = 'storage/' . $request->file('image')->store('dishes', 'public');
+            if ($path)
+                $validator['image'] = $path;
+            // remove old image
+            $oldpath = explode('storage/', $oldpath);
+            if (isset($oldpath[1]) && Storage::disk('public')->exists($oldpath[1]))
+                Storage::disk('public')->delete($oldpath[1]);
+        }
+
         return $dish->update($validator)
             ? response()->json($dish, 200, [], JSON_NUMERIC_CHECK)
             : response()->json(['Error'], 502, [], JSON_NUMERIC_CHECK);

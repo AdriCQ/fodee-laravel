@@ -35,7 +35,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('dishes', [DishController::class, 'list']);
     Route::post('dishes', [DishController::class, 'create']);
     Route::get('dishes/{id}', [DishController::class, 'find']);
-    Route::patch('dishes/{id}', [DishController::class, 'update']);
+    Route::post('dishes/{id}', [DishController::class, 'update']);
     Route::delete('dishes/{id}', [DishController::class, 'remove']);
     // Event
     Route::get('events', [EventController::class, 'list']);
