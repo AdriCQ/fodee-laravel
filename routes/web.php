@@ -17,6 +17,7 @@ use TCG\Voyager\Facades\Voyager;
 
 Route::get('/', [ViewController::class, 'index'])->name('welcome');
 Route::get('/menu', [ViewController::class, 'menu'])->name('menu');
+Route::post('/reserve', [ViewController::class, 'reserve'])->name('reserve.store');
 
 
 Route::group(['prefix' => 'develop'], function () {
