@@ -22,7 +22,7 @@
                 <a class="external" href="{{ route('welcome') }}/#fh5co-featured" >Destacados</a>
             </div>
             <div class="fh5co-logo">
-                <a class="external" href="index.html">{{ $config['title'] }}</a>
+                <a class="external" href="{{ route('welcome') }}">{{ $config['title'] }}</a>
             </div>
             <div class="fh5co-menu-2">
                 <a href="{{ route('menu') }}" data-nav-section="menu">Menu</a>
