@@ -23,7 +23,7 @@ To download PHP packages run
 For sendmail
 
     APP_NAME=yorAppNameHere
-    APP_ENV=local  
+    APP_ENV=local
     APP_DEBUG=false
     APP_URL=putYourDomainHere
     APP_TIMEZONE=UTC
@@ -42,7 +42,7 @@ For sendmail
 For SMTP mail
 
     APP_NAME=yorAppNameHere
-    APP_ENV=local  
+    APP_ENV=local
     APP_DEBUG=false
     APP_URL=putYourDomainHere
     APP_TIMEZONE=UTC

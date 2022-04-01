@@ -1,3 +1,5 @@
+@if(isset($features) && count($features)>6)
+
 <div id="fh5co-featured" data-section="features">
     <div class="container">
         <div class="row text-center fh5co-heading row-padded">
@@ -67,3 +69,5 @@
 
     </div>
 </div>
+
+@endif

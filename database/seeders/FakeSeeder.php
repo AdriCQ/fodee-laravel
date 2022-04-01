@@ -17,7 +17,7 @@ class FakeSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([DatabaseSeeder::class]);
+        // $this->call([DatabaseSeeder::class]);
         $this->seedComments();
         $this->seedDishes(10, 2);
         $this->seedEvents(8, 1);

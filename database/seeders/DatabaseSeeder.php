@@ -21,13 +21,14 @@ class DatabaseSeeder extends Seeder
         $this->seedUsers();
         $this->seedConfig();
         $this->seedImages();
+        $this->call([FakeSeeder::class]);
     }
 
     private function seedUsers()
     {
         $su = new User([
-            'email' => 'developer@admin.com',
-            'password' => bcrypt('AdminPassword'),
+            'email' => 'info@nairda.net',
+            'password' => bcrypt('Nairda*621190719960'),
             'name' => 'Developer',
             'email_verified_at' => now(),
         ]);
