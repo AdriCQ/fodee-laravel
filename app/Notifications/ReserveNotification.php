@@ -48,6 +48,7 @@ class ReserveNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+            ->from(env('MAIL_FROM_ADDRESS', $this->appConfig->email))
             ->subject('Notificacion de reservea')
             ->greeting('Hola ' . $this->asClient ? $this->reserve->name : '')
             ->line('Le enviamos el informe de una reservea en ' . $this->appConfig['title'] . '.')
