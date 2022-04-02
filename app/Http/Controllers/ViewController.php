@@ -94,7 +94,7 @@ class ViewController extends Controller
             ]);
 
             Notification::send($client, new ReserveNotification($reserv));
-            Notification::send($this->DATA['config']->email, new ReserveNotification($reserv, false));
+            Notification::send($vendor, new ReserveNotification($reserv, false));
 
             $this->DATA['notification']['title'] = 'Reserva Completada';
             $this->DATA['notification']['content'] = [
