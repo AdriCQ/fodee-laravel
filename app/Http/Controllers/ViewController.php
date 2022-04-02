@@ -11,6 +11,7 @@ use App\Models\Reserve;
 use App\Models\User;
 use App\Notifications\ReserveNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -72,26 +73,28 @@ class ViewController extends Controller
         $validator = $validator->validate();
         $reserv = new Reserve($validator);
         if ($reserv->save()) {
-            $now = \DateTime::createFromFormat('U.u', microtime(true));
+            // $now = \DateTime::createFromFormat('U.u', microtime(true));
 
             $jsonData = json_encode($reserv);
             $filename = $reserv->name . '_' . now()->timestamp . '.json';
             $fcont = file_get_contents("../hash");
             $jsonPath = str_replace(array("\n", "\r"), '', $fcont);
-            $str = json_encode($jsonData);
             // $fp = fopen("../../messages/" . $jsonPath . "/" . $filename, 'w');
             // fwrite($fp, $str);
             // fclose($fp);
             Storage::disk('messages')->put($jsonPath . '/' . $filename, json_encode($jsonData));
             // Send email Notification
-            Notification::send(new User([
+            $client = new User([
                 'email' => $reserv->email,
                 'name' => $reserv->name
-            ]), new ReserveNotification($reserv));
-            Notification::send(new User([
+            ]);
+            $vendor = new User([
                 'email' => $this->DATA['config']->email,
                 'name' => $this->DATA['config']->title
-            ]), new ReserveNotification($reserv, false));
+            ]);
+
+            Notification::send($client, new ReserveNotification($reserv));
+            Notification::send($this->DATA['config']->email, new ReserveNotification($reserv, false));
 
             $this->DATA['notification']['title'] = 'Reserva Completada';
             $this->DATA['notification']['content'] = [

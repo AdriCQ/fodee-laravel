@@ -19,7 +19,7 @@ class CreateReservesTable extends Migration
             $table->string('email');
             $table->string('occation');
             $table->timestamp('date');
-            $table->text('message');
+            $table->text('message')->nullable();
             $table->boolean('accepted')->default(false);
             $table->timestamps();
         });

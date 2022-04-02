@@ -49,9 +49,9 @@ class ReserveNotification extends Notification
     {
         return (new MailMessage)
             ->from(env('MAIL_FROM_ADDRESS', $this->appConfig->email))
-            ->subject('Notificacion de reservea')
+            ->subject('Notificacion de reserva')
             ->greeting('Hola ' . $this->asClient ? $this->reserve->name : '')
-            ->line('Le enviamos el informe de una reservea en ' . $this->appConfig['title'] . '.')
+            ->line('Le enviamos el informe de una reserva en ' . $this->appConfig['title'] . '.')
             ->line('Para la fecha: ' . $this->reserve->date)
             ->line('A nombre de ' . $this->reserve->name)
             ->line('Motivo: ' . $this->reserve->occation)

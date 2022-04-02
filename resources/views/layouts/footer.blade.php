@@ -4,7 +4,9 @@
             <div class="col-md-12 text-center">
                 <p class="to-animate">&copy; {{ now()->year }} GoDjango. All Rights Reserved
                 </p>
-                <p class="text-center to-animate"><a href="#" class="js-gotop">Ir al Inicio</a></p>
+                <p class="text-center to-animate">
+                    <a href="{{ route('welcome') }}" class="js-gotop">Ir al Inicio</a>
+                </p>
             </div>
         </div>
         <div class="row">

@@ -29,6 +29,9 @@
                                     </div>
                                     <div class="fh5co-food-pricing">
                                         ${{ $dish->sell_price }}
+                                        <div>
+                                            <div class="btn btn-sm btn-primary btn-outline" onclick="showProductPopup('{{ $dish->name }}', '{{ $dish->description }}', '{{ asset($dish->image) }}', {{ $dish->sell_price }})">Detalles</div>
+                                        </div>
                                     </div>
                                 </li>
                             @endforeach
@@ -45,5 +48,33 @@
             </div>
         </div>
         @endif
+
+        <!-- Modal -->
+        <div class="modal fade" data-backdrop="false" id="dish-modal" role="dialog">
+            <div class="modal-dialog" style="padding-top: 10rem">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    <div class="fh5co-event to-animate-2" style="margin-top:2rem" >
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="" class="img-responsive">
+                            </div>
+                            <div class="col-sm-6" style="padding-right: 1rem">
+                                <p class="h3 dish-title"></p>
+                                <p class="h5 dish-description"></p>
+                                <p class="dish-price"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <!-- / Modal -->
     </div>
 </div>
