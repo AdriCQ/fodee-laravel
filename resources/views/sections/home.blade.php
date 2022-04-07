@@ -12,9 +12,9 @@
             </div>
         </div>
         <ul class="slides">
-        <li style="background-image: url({{ asset($images['slider1']) }});" data-stellar-background-ratio="0.5"></li>
-        <li style="background-image: url({{ asset($images['slider3']) }});" data-stellar-background-ratio="0.5"></li>
-        <li style="background-image: url({{ asset($images['slider3']) }});" data-stellar-background-ratio="0.5"></li>
+            <li style="background-image: url({{ asset($images['slider1']) }});" data-stellar-background-ratio="0.5"></li>
+            <li style="background-image: url({{ asset($images['slider3']) }});" data-stellar-background-ratio="0.5"></li>
+            <li style="background-image: url({{ asset($images['slider3']) }});" data-stellar-background-ratio="0.5"></li>
         </ul>
 
     </div>

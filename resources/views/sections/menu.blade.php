@@ -21,9 +21,9 @@
                                         <div>
                                             <h3>{{ $dish->name }}</h3>
                                             @if(strlen($dish->description)<100)
-                                                <p>{{ $dish->description }}</p>
+                                                <p>{!! $dish->description !!}</p>
                                             @else
-                                                <p>{{ substr($dish->description,0,100) }}...</p>
+                                                <p>{!! substr($dish->description,0,100) !!}...</p>
                                             @endif
                                         </div>
                                     </div>

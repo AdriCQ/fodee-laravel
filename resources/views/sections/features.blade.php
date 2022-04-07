@@ -1,4 +1,4 @@
-@if(isset($features) && count($features)>6)
+@if(isset($features) && count($features)>=6)
 
 <div id="fh5co-featured" data-section="features">
     <div class="container">
