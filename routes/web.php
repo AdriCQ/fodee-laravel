@@ -21,6 +21,7 @@ Route::post('/reserve', [ViewController::class, 'reserve'])->name('reserve.store
 Route::get('/reserve', function () {
     return redirect('/');
 })->name('reserve.get');
+Route::get('/dish-details/{id}', [ViewController::class, 'dishDetails'])->name('dish-details');
 
 
 Route::group(['prefix' => 'develop'], function () {

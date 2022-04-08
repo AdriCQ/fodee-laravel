@@ -27,6 +27,14 @@ class ViewController extends Controller
         $config = Config::first();
         $this->DATA['config'] = $config;
     }
+
+    public function dishDetails(int $id)
+    {
+        $this->DATA['dish'] = Dish::find($id);
+
+        $this->DATA['fullMenu'] = true;
+        return view('dish-details')->with($this->DATA);
+    }
     /**
      * index
      * @return Illuminate\Contracts\View\View

@@ -605,10 +605,11 @@
  * -----------------------------------------
  */
 function showProductPopup(name, description, image, price) {
+    console.log('Show Popup');
     console.log({ name, description, image, price });
-    $('#dish-modal img').attr('src', image);
-    $('#dish-modal .dish-title').html(name);
-    $('#dish-modal .dish-description').html(description);
-    $('#dish-modal .dish-price').html(`$${Number(price).toFixed(2)}`);
-    $('#dish-modal').modal();
+    // $('#dish-modal img').attr('src', image);
+    // $('#dish-modal .dish-title').html(name);
+    // $('#dish-modal .dish-description').html(description);
+    // $('#dish-modal .dish-price').html(`$${Number(price).toFixed(2)}`);
+    // $('#dish-modal').modal();
 }
