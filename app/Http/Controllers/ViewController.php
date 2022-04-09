@@ -32,7 +32,8 @@ class ViewController extends Controller
     public function dishDetails(int $id)
     {
         $this->DATA['dish'] = Dish::find($id);
-
+        if (!$this->DATA['dish'])
+            return redirect()->route('welcome');
         $this->DATA['fullMenu'] = true;
         return view('dish-details')->with($this->DATA);
     }
@@ -42,6 +43,8 @@ class ViewController extends Controller
     public function eventDetails(int $id)
     {
         $this->DATA['event'] = Event::find($id);
+        if (!$this->DATA['event'])
+            return redirect()->route('welcome');
 
         $this->DATA['fullMenu'] = true;
         return view('event-details')->with($this->DATA);
