@@ -297,8 +297,13 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+    #fh5co-home .flexslider .fh5co-text h1 {
+        font-size: 80px;
+    }
+
     #fh5co-home .flexslider .fh5co-text h2 {
-        font-size: 20px;
+        font-size: 30px;
+        margin-top: 2rem;
     }
 }
 
@@ -1059,6 +1064,28 @@ p {
     color: #fb6e14;
 }
 
+@media screen and (max-width: 600px) {
+
+    #fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc,
+    #fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc>figure img,
+    #fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc>figure,
+    #fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc>div {
+        width: 100%;
+    }
+
+    #fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc>div p,
+    #fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc>div h3 {
+        margin: 1rem;
+    }
+
+    #fh5co-menus .fh5co-food-menu ul li .fh5co-food-pricing {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        color: #fb6e14;
+    }
+}
+
 #fh5co-events {
     padding: 7em 0;
     background-color: transparent;
@@ -1617,3 +1644,21 @@ p {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.event-modal-btn {
+    display: none;
+}
+
+.event-modal-link {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .event-modal-link {
+        display: none;
+    }
+
+    .event-modal-btn {
+        display: normal !important;
+    }
+}

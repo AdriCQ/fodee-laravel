@@ -10,16 +10,17 @@
         </div>
         <div class="row">
             @foreach ($events as $e)
-            <div class="col-md-4">
+            <div class="col-sm-6 col-md-4">
                 <div class="fh5co-event to-animate-2" >
                     <h3 style="height: 6rem" >{{$e->title}}</h3>
                     <span style="height: 2rem" >{{ $e->date }}</span>
                     @if(strlen($e->description)<200)
-                        <p style="height: 22rem">{{ $e->description }}</p>
+                        <p style="height: 26rem">{{ $e->description }}</p>
                     @else
-                        <p style="height: 22rem">{{ substr($e->description,0,197) }}...</p>
+                        <p style="height: 26rem">{{ substr($e->description,0,197) }}...</p>
                     @endif
-                    <p><button data-toggle="modal" data-target="#eventModal-{{ $e->id }}" class="btn btn-primary btn-outline">Leer Más</a></p>
+                    <p class="hidden-xs"><button data-toggle="modal" data-target="#eventModal-{{ $e->id }}" class="btn btn-primary btn-outline">Leer Más</button></p>
+                    <p class="visible-xs-block"><a href="{{ route('event-details', ['id'=>$e->id]) }}" class="btn btn-primary btn-outline">Leer Más</a></p>
 
                 </div>
             </div>

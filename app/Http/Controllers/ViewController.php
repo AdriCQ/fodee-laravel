@@ -11,7 +11,6 @@ use App\Models\Reserve;
 use App\Models\User;
 use App\Notifications\ReserveNotification;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -27,13 +26,25 @@ class ViewController extends Controller
         $config = Config::first();
         $this->DATA['config'] = $config;
     }
-
+    /**
+     * dishDetails
+     */
     public function dishDetails(int $id)
     {
         $this->DATA['dish'] = Dish::find($id);
 
         $this->DATA['fullMenu'] = true;
         return view('dish-details')->with($this->DATA);
+    }
+    /**
+     * eventDetails
+     */
+    public function eventDetails(int $id)
+    {
+        $this->DATA['event'] = Event::find($id);
+
+        $this->DATA['fullMenu'] = true;
+        return view('event-details')->with($this->DATA);
     }
     /**
      * index
