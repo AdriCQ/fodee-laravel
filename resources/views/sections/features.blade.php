@@ -1,4 +1,4 @@
-@if(isset($features) && count($features)>=6)
+@if(isset($features) && count($features)>=1)
 
 <div id="fh5co-featured" data-section="features">
     <div class="container">
@@ -10,59 +10,76 @@
         </div>
         <div class="row">
             <div class="fh5co-grid">
+                @foreach ($features as $key => $f)
+
+                @if(($key+1)%6==0)
                 <div class="fh5co-v-half to-animate-2">
-                    <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ asset($features[0]->image) }})"></div>
+                    <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ asset($f->image) }})"></div>
                     <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-                        <h2>{{$features[0]->name}}</h2>
-                        <span class="pricing">${{$features[0]->sell_price}}</span>
-                        <p>{!! $features[0]->description !!}</p>
-                    </div>
-                </div>
-                <div class="fh5co-v-half">
-                    <div class="fh5co-h-row-2 to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ $features[1]->image }})"></div>
-                        <div class="fh5co-v-col-2 fh5co-text arrow-left">
-                            <h2>{{$features[1]->name}}</h2>
-                            <span class="pricing">${{$features[1]->sell_price}}</span>
-                            <p>{!! $features[1]->description !!}</p>
-                        </div>
-                    </div>
-                    <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ asset($features[2]->image) }})"></div>
-                        <div class="fh5co-v-col-2 fh5co-text arrow-right">
-                            <h2>{{$features[2]->name}}</h2>
-                            <span class="pricing">${{$features[2]->sell_price}}</span>
-                            <p>{!! $features[2]->description !!}</p>
-                        </div>
+                        <h2>{{$f->name}}</h2>
+                        <span class="pricing">${{$f->sell_price}}</span>
+                        <p>{!! $f->description !!}</p>
                     </div>
                 </div>
 
+                @elseif(($key+1)%6==1 || ($key+1)%6==2 )
                 <div class="fh5co-v-half">
-                    <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{$features[3]->image}})"></div>
-                        <div class="fh5co-v-col-2 fh5co-text arrow-right">
-                            <h2>{{$features[3]->name}}</h2>
-                            <span class="pricing">${{$features[3]->sell_price}}</span>
-                            <p>{!! $features[3]->description !!}</p>
-                        </div>
-                    </div>
+                    @if(($key+1)%6==1)
                     <div class="fh5co-h-row-2 to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ $features[4]->image }})"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ $f->image }})"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-left">
-                            <h2>{{$features[4]->name}}</h2>
-                            <span class="pricing">${{$features[4]->sell_price}}</span>
-                            <p>{!! $features[4]->description !!}</p>
+                            <h2>{{$f->name}}</h2>
+                            <span class="pricing">${{$f->sell_price}}</span>
+                            <p>{!! $f->description !!}</p>
                         </div>
                     </div>
+                    @else
+                    <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ asset($f->image) }})"></div>
+                        <div class="fh5co-v-col-2 fh5co-text arrow-right">
+                            <h2>{{$f->name}}</h2>
+                            <span class="pricing">${{$f->sell_price}}</span>
+                            <p>{!! $f->description !!}</p>
+                        </div>
+                    </div>
+                    @endif
                 </div>
+
+                @elseif(($key+1)%6==3 || ($key+1)%6==4)
+                <div class="fh5co-v-half">
+                    @if(($key+1)%6==3)
+                    <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{$f->image}})"></div>
+                        <div class="fh5co-v-col-2 fh5co-text arrow-right">
+                            <h2>{{$f->name}}</h2>
+                            <span class="pricing">${{$f->sell_price}}</span>
+                            <p>{!! $f->description !!}</p>
+                        </div>
+                    </div>
+                    @else
+                    <div class="fh5co-h-row-2 to-animate-2">
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ $f->image }})"></div>
+                        <div class="fh5co-v-col-2 fh5co-text arrow-left">
+                            <h2>{{$f->name}}</h2>
+                            <span class="pricing">${{$f->sell_price}}</span>
+                            <p>{!! $f->description !!}</p>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+
+                @elseif (($key+1)%6==5)
                 <div class="fh5co-v-half to-animate-2">
-                    <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ $features[5]->image }}"></div>
+                    <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({{ $f->image }}"></div>
                     <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-                        <h2>{{$features[5]->name}}</h2>
-                        <span class="pricing">${{ $features[5]->sell_price }}</span>
-                        <p>{!! $features[5]->description !!}</p>
+                        <h2>{{$f->name}}</h2>
+                        <span class="pricing">${{ $f->sell_price }}</span>
+                        <p>{!! $f->description !!}</p>
                     </div>
                 </div>
+                @endif
+
+                @endforeach
 
             </div>
         </div>

@@ -65,7 +65,7 @@ class ViewController extends Controller
             ]);
         }
         $this->DATA['categories'] = $categories;
-        $this->DATA['features'] = Dish::query()->orderBy('feature', 'desc')->take(6)->get();
+        $this->DATA['features'] = Dish::query()->where('feature', true)->get();
         $images = [];
         foreach (Image::all() as $img) {
             $images[$img->tag] = $img->path;
