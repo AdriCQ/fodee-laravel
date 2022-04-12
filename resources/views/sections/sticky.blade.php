@@ -5,7 +5,7 @@
             <div class="fh5co-menu-1">
                 <a href="{{ route('welcome') }}" data-nav-section="home">Inicio</a>
                 <a href="{{ route('welcome') }}" data-nav-section="about">Sobre Nosotros</a>
-                @if(isset($features) && count($features)>=6)
+                @if(isset($features) && count($features)>=1)
                 <a href="{{ route('welcome') }}" data-nav-section="features">Destacados</a>
                 @endif
             </div>
@@ -21,7 +21,7 @@
             <div class="fh5co-menu-1">
                 <a class="external" href="{{ route('welcome') }}/#fh5co-home" >Inicio</a>
                 <a class="external" href="{{ route('welcome') }}/#fh5co-about">Sobre Nosotros</a>
-                @if(isset($features) && count($features)>=6)
+                @if(isset($features) && count($features)>=1)
                 <a class="external" href="{{ route('welcome') }}/#fh5co-featured" >Destacados</a>
                 @endif
             </div>
