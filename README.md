@@ -105,3 +105,7 @@ For SMTP mail
 ## Extra
 
 To change timezone edit APP_TIMEZONE=UTC on .env. List of available timezones code https://www.php.net/manual/es/timezones.php
+
+## Admin
+    user: admin
+    password: admin

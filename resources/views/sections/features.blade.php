@@ -18,7 +18,13 @@
                     <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                         <h2>{{$f->name}}</h2>
                         <span class="pricing">${{$f->sell_price}}</span>
-                        <p>{!! $f->description !!}</p>
+                        {{-- <p>{!! $f->description !!}</p> --}}
+
+                        <div class="fh5co-food-pricing">
+                            <div>
+                                <a class="btn btn-sm btn-primary btn-outline" href="{{ route('dish-details', ['id'=>$f->id]) }}" >Detalles</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -30,7 +36,13 @@
                         <div class="fh5co-v-col-2 fh5co-text arrow-left">
                             <h2>{{$f->name}}</h2>
                             <span class="pricing">${{$f->sell_price}}</span>
-                            <p>{!! $f->description !!}</p>
+                            {{-- <p>{!! $f->description !!}</p> --}}
+
+                            <div class="fh5co-food-pricing">
+                                <div>
+                                    <a class="btn btn-sm btn-primary btn-outline" href="{{ route('dish-details', ['id'=>$f->id]) }}" >Detalles</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @else
@@ -39,7 +51,13 @@
                         <div class="fh5co-v-col-2 fh5co-text arrow-right">
                             <h2>{{$f->name}}</h2>
                             <span class="pricing">${{$f->sell_price}}</span>
-                            <p>{!! $f->description !!}</p>
+                            {{-- <p>{!! $f->description !!}</p> --}}
+
+                            <div class="fh5co-food-pricing">
+                                <div>
+                                    <a class="btn btn-sm btn-primary btn-outline" href="{{ route('dish-details', ['id'=>$f->id]) }}" >Detalles</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @endif
@@ -53,7 +71,13 @@
                         <div class="fh5co-v-col-2 fh5co-text arrow-right">
                             <h2>{{$f->name}}</h2>
                             <span class="pricing">${{$f->sell_price}}</span>
-                            <p>{!! $f->description !!}</p>
+                            {{-- <p>{!! $f->description !!}</p> --}}
+
+                            <div class="fh5co-food-pricing">
+                                <div>
+                                    <a class="btn btn-sm btn-primary btn-outline" href="{{ route('dish-details', ['id'=>$f->id]) }}" >Detalles</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @else
@@ -62,7 +86,13 @@
                         <div class="fh5co-v-col-2 fh5co-text arrow-left">
                             <h2>{{$f->name}}</h2>
                             <span class="pricing">${{$f->sell_price}}</span>
-                            <p>{!! $f->description !!}</p>
+                            {{-- <p>{!! $f->description !!}</p> --}}
+
+                            <div class="fh5co-food-pricing">
+                                <div>
+                                    <a class="btn btn-sm btn-primary btn-outline" href="{{ route('dish-details', ['id'=>$f->id]) }}" >Detalles</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @endif
@@ -74,7 +104,12 @@
                     <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                         <h2>{{$f->name}}</h2>
                         <span class="pricing">${{ $f->sell_price }}</span>
-                        <p>{!! $f->description !!}</p>
+                        {{-- <p>{!! $f->description !!}</p> --}}
+                        <div class="fh5co-food-pricing">
+                            <div>
+                                <a class="btn btn-sm btn-primary btn-outline" href="{{ route('dish-details', ['id'=>$f->id]) }}" >Detalles</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 @endif
