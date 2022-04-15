@@ -1,14 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
-        <div id="fh5co-featured" data-section="features">
+        {{-- <div id="fh5co-featured" data-section="features">
             <div class="container">
         @foreach ($categories as $cat)
 
                 <div class="row text-center fh5co-heading row-padded">
                     <div class="col-md-8 col-md-offset-2">
                         <h2 class="heading to-animate">{{ $cat['name'] }}</h2>
-                        {{-- <p class="sub-heading to-animate"></p> --}}
                     </div>
                 </div>
                 <div class="row">
@@ -21,7 +20,6 @@
                             <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                                 <h2>{{$f->name}}</h2>
                                 <span class="pricing">${{$f->sell_price}}</span>
-                                {{-- <p>{!! $f->description !!}</p> --}}
 
                                 <div class="fh5co-food-pricing">
                                     <div>
@@ -39,7 +37,6 @@
                                 <div class="fh5co-v-col-2 fh5co-text arrow-left">
                                     <h2>{{$f->name}}</h2>
                                     <span class="pricing">${{$f->sell_price}}</span>
-                                    {{-- <p>{!! $f->description !!}</p> --}}
 
                                     <div class="fh5co-food-pricing">
                                         <div>
@@ -54,7 +51,6 @@
                                 <div class="fh5co-v-col-2 fh5co-text arrow-right">
                                     <h2>{{$f->name}}</h2>
                                     <span class="pricing">${{$f->sell_price}}</span>
-                                    {{-- <p>{!! $f->description !!}</p> --}}
 
                                     <div class="fh5co-food-pricing">
                                         <div>
@@ -74,7 +70,6 @@
                                 <div class="fh5co-v-col-2 fh5co-text arrow-right">
                                     <h2>{{$f->name}}</h2>
                                     <span class="pricing">${{$f->sell_price}}</span>
-                                    {{-- <p>{!! $f->description !!}</p> --}}
 
                                     <div class="fh5co-food-pricing">
                                         <div>
@@ -89,7 +84,6 @@
                                 <div class="fh5co-v-col-2 fh5co-text arrow-left">
                                     <h2>{{$f->name}}</h2>
                                     <span class="pricing">${{$f->sell_price}}</span>
-                                    {{-- <p>{!! $f->description !!}</p> --}}
 
                                     <div class="fh5co-food-pricing">
                                         <div>
@@ -107,7 +101,6 @@
                             <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                                 <h2>{{$f->name}}</h2>
                                 <span class="pricing">${{ $f->sell_price }}</span>
-                                {{-- <p>{!! $f->description !!}</p> --}}
                                 <div class="fh5co-food-pricing">
                                     <div>
                                         <a class="btn btn-sm btn-primary btn-outline" href="{{ route('dish-details', ['id'=>$f->id]) }}" >Detalles</a>
@@ -125,6 +118,8 @@
 
             </div>
         </div>
+         --}}
 
+    @include('sections.menu')
     @include('sections.reservation')
 @endsection
