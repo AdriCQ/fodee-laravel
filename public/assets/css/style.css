@@ -677,7 +677,7 @@ p {
     width: 64px;
     position: absolute;
     content: "";
-    background: url(../images/0103-served-plate_64.png) no-repeat;
+    /* background: url(../images/0103-served-plate_64.png) no-repeat; */
     top: 0;
     left: 50%;
     margin-top: -50px;
